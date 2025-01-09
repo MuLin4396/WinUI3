@@ -12,22 +12,31 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.ViewManagement;
 using App1.View;
 using Microsoft.UI.Composition.SystemBackdrops;
 using Microsoft.UI.Xaml.Media.Animation;
+using WinUIEx;
 
 namespace App1
 {
 	public sealed partial class MainWindow : Window
 	{
+		private const int WindowMinWidth = 960;
+		private const int WindowMinHeight = 540;
+
 		public MainWindow()
 		{
-			this.InitializeComponent();
+			InitializeComponent();
 
+			var manager = WindowManager.Get(this);
+			manager.MinWidth = WindowMinWidth;
+			manager.MinHeight = WindowMinHeight;
+			
 			NavigationViewControl.SelectedItem = NavigationViewControl.MenuItems.OfType<NavigationViewItem>().First();
-			ContentFrame.Navigate(typeof(View.HomePage), null, new EntranceNavigationTransitionInfo());
+			ContentFrame.Navigate(typeof(HomePage), null, new EntranceNavigationTransitionInfo());
 
-			SystemBackdrop = new MicaBackdrop() { Kind = MicaKind.Base };
+			SystemBackdrop = new MicaBackdrop { Kind = MicaKind.Base };
 
 			ExtendsContentIntoTitleBar = true;
 			SetTitleBar(AppTitleBar);
