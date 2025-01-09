@@ -32,11 +32,11 @@ namespace App1
 			var manager = WindowManager.Get(this);
 			manager.MinWidth = WindowMinWidth;
 			manager.MinHeight = WindowMinHeight;
-			
+
 			NavigationViewControl.SelectedItem = NavigationViewControl.MenuItems.OfType<NavigationViewItem>().First();
 			ContentFrame.Navigate(typeof(HomePage), null, new EntranceNavigationTransitionInfo());
 
-			SystemBackdrop = new MicaBackdrop { Kind = MicaKind.Base };
+			SystemBackdrop = new MicaBackdrop { Kind = MicaKind.BaseAlt };
 
 			ExtendsContentIntoTitleBar = true;
 			SetTitleBar(AppTitleBar);

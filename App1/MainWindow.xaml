@@ -9,17 +9,16 @@
 	Title="Hello WinUI 3">
 
 	<Grid>
-
 		<Grid x:Name="AppTitleBar" Height="48" Margin="48,0,0,0 " VerticalAlignment="Top" Padding="0">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="Auto" />
 				<ColumnDefinition Width="Auto" />
 			</Grid.ColumnDefinitions>
-			<Image x:Name="TitleBarIcon" Source="ms-appx:///Assets/ZhiGengNiao.png" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="16" Height="16" Margin="0,0,16,0" />
-			<TextBlock x:Name="TitleBarTextBlock" Text="{x:Bind GetAppTitleFromSystem()}" Style="{StaticResource CaptionTextBlockStyle}" Grid.Column="1" VerticalAlignment="Center" Margin="32,0,0,0" />
+			<Image x:Name="TitleBarIcon" Source="ms-appx:///Assets/ZhiGengNiao.png" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="24" Height="24" Margin="0,0,16,0" />
+			<TextBlock x:Name="TitleBarTextBlock" Text="{x:Bind GetAppTitleFromSystem()}" Style="{StaticResource CaptionTextBlockStyle}" Grid.Column="1" VerticalAlignment="Center" Margin="40,0,0,0" />
 		</Grid>
 
-		<NavigationView x:Name="NavigationViewControl" IsTitleBarAutoPaddingEnabled="False" AlwaysShowHeader="True" IsTabStop="False" BackRequested="NavigationView_OnBackRequested" ItemInvoked="NavigationView_OnItemInvoked">
+		<NavigationView x:Name="NavigationViewControl" IsTitleBarAutoPaddingEnabled="False" IsBackButtonVisible="Visible" PaneDisplayMode="Left" AlwaysShowHeader="True" IsTabStop="False" BackRequested="NavigationView_OnBackRequested" ItemInvoked="NavigationView_OnItemInvoked">
 			<NavigationView.HeaderTemplate>
 				<DataTemplate>
 					<Grid Margin="0,-10,0,0">
@@ -34,7 +33,7 @@
 				</DataTemplate>
 			</NavigationView.HeaderTemplate>
 			<NavigationView.MenuItems>
-				<NavigationViewItem Icon="Home" Content="Home" Tag="App1.View.HomePage" />
+				<NavigationViewItem Icon="Home" Content="首页" Tag="App1.View.HomePage" />
 			</NavigationView.MenuItems>
 			<Frame x:Name="ContentFrame" Navigated="ContentFrame_OnNavigated" Padding="55,10,0,0"></Frame>
 		</NavigationView>
