@@ -50,7 +50,7 @@ namespace App1
 			{
 				ContentFrame.Navigate(typeof(SettingsPage), null, args.RecommendedNavigationTransitionInfo);
 			}
-			else if (args.InvokedItemContainer != null && (args.InvokedItemContainer.Tag == null))
+			else if (args.InvokedItemContainer != null && (args.InvokedItemContainer.Tag != null))
 			{
 				Type newPage = Type.GetType(args.InvokedItemContainer.Tag.ToString());
 				ContentFrame.Navigate(newPage, null, args.RecommendedNavigationTransitionInfo);
