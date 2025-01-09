@@ -20,20 +20,33 @@ namespace App1
         public MainWindow()
         {
             this.InitializeComponent();
-            
+
             ExtendsContentIntoTitleBar = true;
-            
+
             SetTitleBar(AppTitleBar);
         }
 
         private void NavigationView_OnBackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args)
         {
-            throw new NotImplementedException();
+            // throw new NotImplementedException();
+            if (ContentFrame.CanGoBack) ContentFrame.GoBack();
         }
+
 
         private void NavigationView_OnItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
         {
             throw new NotImplementedException();
+            // if (args.IsSettingsInvoked)
+            // {
+            //     ContentFrame.Navigate(typeof())
+            // }
+        }
+
+        private void ContentFrame_OnNavigated(object sender, NavigationEventArgs e)
+        {
+            throw new NotImplementedException();
+            // NavigationView.IsBackEnabled = ContentFrame.CanGoBack;
+            // if (ContentFrame.SourcePageType==)
         }
     }
 }
