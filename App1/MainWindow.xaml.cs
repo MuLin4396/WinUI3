@@ -24,7 +24,7 @@ namespace App1
 		{
 			this.InitializeComponent();
 
-			NavigationViewControl.SelectedItem = NavigationViewControl.MenuItems.OfType<ABI.Microsoft.UI.Xaml.Controls.NavigationViewItem>().First();
+			NavigationViewControl.SelectedItem = NavigationViewControl.MenuItems.OfType<NavigationViewItem>().First();
 			ContentFrame.Navigate(typeof(View.HomePage), null, new EntranceNavigationTransitionInfo());
 
 			SystemBackdrop = new MicaBackdrop() { Kind = MicaKind.Base };
@@ -59,7 +59,6 @@ namespace App1
 
 		private void ContentFrame_OnNavigated(object sender, NavigationEventArgs e)
 		{
-			// throw new NotImplementedException();
 			NavigationViewControl.IsBackEnabled = ContentFrame.CanGoBack;
 			if (ContentFrame.SourcePageType == typeof(SettingsPage))
 			{
