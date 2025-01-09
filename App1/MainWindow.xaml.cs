@@ -26,9 +26,13 @@ namespace App1
             SetTitleBar(AppTitleBar);
         }
 
+        private string GetAppTitleFromSystem()
+        {
+            return Windows.ApplicationModel.Package.Current.DisplayName;
+        }
+
         private void NavigationView_OnBackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args)
         {
-            // throw new NotImplementedException();
             if (ContentFrame.CanGoBack) ContentFrame.GoBack();
         }
 
@@ -38,7 +42,7 @@ namespace App1
             throw new NotImplementedException();
             // if (args.IsSettingsInvoked)
             // {
-            //     ContentFrame.Navigate(typeof())
+            //     ContentFrame.Navigate(typeof(SettingsPage), null, args.RecommendedNavigationTransitionInfo);
             // }
         }
 
