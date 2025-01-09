@@ -13,6 +13,16 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Assets\Logo\BadgeLogo.scale-100.png" />
+    <None Remove="Assets\Logo\BadgeLogo.scale-125.png" />
+    <None Remove="Assets\Logo\BadgeLogo.scale-150.png" />
+    <None Remove="Assets\Logo\BadgeLogo.scale-200.png" />
+    <None Remove="Assets\Logo\BadgeLogo.scale-400.png" />
+    <None Remove="Assets\Logo\StoreLogo.scale-100.png" />
+    <None Remove="Assets\Logo\StoreLogo.scale-125.png" />
+    <None Remove="Assets\Logo\StoreLogo.scale-150.png" />
+    <None Remove="Assets\Logo\StoreLogo.scale-200.png" />
+    <None Remove="Assets\Logo\StoreLogo.scale-400.png" />
     <None Remove="View\HomePage.xaml" />
     <None Remove="View\SettingsPage.xaml" />
   </ItemGroup>
@@ -32,6 +42,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1742" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.241114003" />
+    <PackageReference Include="WinUIEx" Version="2.5.0" />
   </ItemGroup>
   <ItemGroup>
     <Page Update="View\SettingsPage.xaml">
