@@ -15,7 +15,7 @@
 				<ColumnDefinition Width="Auto" />
 				<ColumnDefinition Width="Auto" />
 			</Grid.ColumnDefinitions>
-			<Image x:Name="TitleBarIcon" Source="ms-appx:///Assets/StoreLogo.png" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="16" Height="16" Margin="0,0,16,0" />
+			<Image x:Name="TitleBarIcon" Source="ms-appx:///Assets/Lu.png" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="16" Height="16" Margin="0,0,16,0" />
 			<TextBlock x:Name="TitleBarTextBlock" Text="{x:Bind GetAppTitleFromSystem()}" Style="{StaticResource CaptionTextBlockStyle}" Grid.Column="1" VerticalAlignment="Center" Margin="32,0,0,0" />
 		</Grid>
 
