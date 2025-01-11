@@ -7,8 +7,28 @@
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	mc:Ignorable="d"
 	Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-	<Grid>
-		<TextBlock Text="设置" />
+	<Page.Resources>
+		<x:Double x:Key="SettingCardSpacing">4</x:Double>
+		<Style x:Key="SettingsSectionHeaderTextBlockStyle" BasedOn="{StaticResource BodyStrongTextBlockStyle}" TargetType="TextBlock">
+			<Style.Setters>
+				<Setter Property="Margin" Value="1,30,0,6" />
+			</Style.Setters>
+		</Style>
+	</Page.Resources>
+	<Grid x:Name="RootGrid">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<TextBlock x:Name="PageHeader" Margin="36,24,35,0" Style="{StaticResource TitleTextBlockStyle}" Text="设置" />
+		<ScrollViewer x:Name="ContenScrollViewer" Grid.Row="1" Padding="36,0,36,0" IsTapEnabled="False" UseSystemFocusVisuals="False" VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
+			<StackPanel Spacing="{StaticResource SettingCardSpacing}">
+				<StackPanel.ChildrenTransitions>
+					<EntranceThemeTransition FromHorizontalOffset="50" />
+					<RepositionThemeTransition IsStaggeringEnabled="False" />
+				</StackPanel.ChildrenTransitions>
+				<TextBlock Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" Text="外观和行为" />
+			</StackPanel>
+		</ScrollViewer>
 	</Grid>
 </Page>

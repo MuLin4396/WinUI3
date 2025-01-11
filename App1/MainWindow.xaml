@@ -18,7 +18,7 @@
 			<TextBlock x:Name="TitleBarTextBlock" Text="{x:Bind GetAppTitleFromSystem()}" Style="{StaticResource CaptionTextBlockStyle}" Grid.Column="1" VerticalAlignment="Center" Margin="40,0,0,0" />
 		</Grid>
 
-		<NavigationView x:Name="NavigationViewControl" OpenPaneLength="240" IsTitleBarAutoPaddingEnabled="False" IsTabStop="True" AlwaysShowHeader="True" IsBackButtonVisible="Visible" PaneDisplayMode="Left" BackRequested="NavigationView_OnBackRequested" ItemInvoked="NavigationView_OnItemInvoked">
+		<NavigationView x:Name="NavigationViewControl" OpenPaneLength="160" IsTitleBarAutoPaddingEnabled="False" IsTabStop="True" AlwaysShowHeader="True" IsBackButtonVisible="Visible" PaneDisplayMode="Left" BackRequested="NavigationView_OnBackRequested" ItemInvoked="NavigationView_OnItemInvoked">
 			<NavigationView.MenuItems>
 				<NavigationViewItem Icon="Home" Content="首页" Tag="App1.View.HomePage" />
 			</NavigationView.MenuItems>
