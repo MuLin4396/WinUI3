@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -44,7 +45,10 @@ namespace App1
 
 		private string GetAppTitleFromSystem()
 		{
-			return Windows.ApplicationModel.Package.Current.DisplayName;
+			//todo 版本值
+			string appTitle = Package.Current.DisplayName.ToString();
+			string appVersion = Package.Current.Id.Version.ToString();
+			return appTitle + " · " + appVersion;
 		}
 
 		private void NavigationView_OnBackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args)
