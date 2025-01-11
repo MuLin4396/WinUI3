@@ -9,14 +9,14 @@
 
   <Identity
     Name="93acb460-69e1-4ad5-90a2-f518d8d4ab83"
-    Publisher="CN=Ming4"
+    Publisher="CN=SHMing"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="93acb460-69e1-4ad5-90a2-f518d8d4ab83" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>Hello WinUI3</DisplayName>
-    <PublisherDisplayName>Ming4</PublisherDisplayName>
+    <PublisherDisplayName>SHMing</PublisherDisplayName>
     <Logo>Assets\Logo\StoreLogo.png</Logo>
   </Properties>
 
