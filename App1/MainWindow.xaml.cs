@@ -25,6 +25,7 @@ namespace App1
 	{
 		private const int WindowMinWidth = 960;
 		private const int WindowMinHeight = 540;
+		public static MainWindow current;
 
 		public MainWindow()
 		{
@@ -33,6 +34,8 @@ namespace App1
 			var manager = WindowManager.Get(this);
 			manager.MinWidth = WindowMinWidth;
 			manager.MinHeight = WindowMinHeight;
+
+			current = this;
 
 			NavigationViewControl.SelectedItem = NavigationViewControl.MenuItems.OfType<NavigationViewItem>().First();
 			ContentFrame.Navigate(typeof(HomePage), null, new EntranceNavigationTransitionInfo());
@@ -43,9 +46,9 @@ namespace App1
 			SetTitleBar(AppTitleBar);
 		}
 
+		/// 版本值显示异常
 		private string GetAppTitleFromSystem()
 		{
-			//todo 版本值
 			string appTitle = Package.Current.DisplayName.ToString();
 			string appVersion = Package.Current.Id.Version.ToString();
 			return appTitle + " · " + appVersion;

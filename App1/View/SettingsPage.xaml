@@ -5,6 +5,7 @@
 	xmlns:local="using:App1.View"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:toolkit="using:CommunityToolkit.WinUI.Controls"
 	mc:Ignorable="d"
 	Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 	<Page.Resources>
@@ -28,6 +29,16 @@
 					<RepositionThemeTransition IsStaggeringEnabled="False" />
 				</StackPanel.ChildrenTransitions>
 				<TextBlock Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" Text="外观和行为" />
+				<toolkit:SettingsCard Header="应用主题" Description="选择要显示的应用程序主题">
+					<toolkit:SettingsCard.HeaderIcon>
+						<FontIcon Glyph="&#xE793;" />
+					</toolkit:SettingsCard.HeaderIcon>
+					<ComboBox x:Name="themeMode" Width="40" AutomationProperties.AutomationId="themeModeComboBox" SelectionChanged="ThemeMode_OnSelectionChanged">
+						<ComboBoxItem Content="浅色" Tag="Light" />
+						<ComboBoxItem Content="深色" Tag="Dark" />
+						<ComboBoxItem Content="跟随系统" Tag="Default" />
+					</ComboBox>
+				</toolkit:SettingsCard>
 			</StackPanel>
 		</ScrollViewer>
 	</Grid>
