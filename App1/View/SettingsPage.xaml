@@ -37,6 +37,20 @@
 						<ComboBoxItem Content="跟随系统" Tag="Default" />
 					</ComboBox>
 				</toolkit:SettingsCard>
+				<toolkit:SettingsExpander x:Name="TiLi" Header="体力" Description="清理体力的相关配置" HeaderIcon="{ui:FontIcon Glyph=&#xE793;}" IsExpanded="True" IsEnabled="True">
+					 <ToggleSwitch x:Name="TiLikaiguan" IsOn="True" />
+					 <toolkit:SettingsExpander.Items>
+					 	<toolkit:SettingsCard x:Name="fuben" Header="默认副本" Description="选择默认副本" HeaderIcon="{ui:FontIcon Glyph=&#xE793;}">
+					 		<ComboBox x:Name="fubenleixing" Width="40">
+					 			<ComboBoxItem Content="拟造花萼(金)" />
+					 			<ComboBoxItem Content="拟造花萼(赤)" />
+					 			<ComboBoxItem Content="凝滞虚影" />
+					 			<ComboBoxItem Content="侵蚀隧洞" />
+					 			<ComboBoxItem Content="饰品提取" />
+					 		</ComboBox>
+					 	</toolkit:SettingsCard>
+					 </toolkit:SettingsExpander.Items>
+				</toolkit:SettingsExpander>
 			</StackPanel>
 		</ScrollViewer>
 	</Grid>
