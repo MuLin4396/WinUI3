@@ -31,26 +31,53 @@
 				</StackPanel.ChildrenTransitions>
 				<TextBlock Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" Text="外观和行为" />
 				<toolkit:SettingsCard Header="应用主题" Description="选择要显示的应用程序主题" HeaderIcon="{ui:FontIcon Glyph=&#xE793;}">
-					<ComboBox x:Name="themeMode" Width="40" AutomationProperties.AutomationId="themeModeComboBox" SelectionChanged="ThemeMode_OnSelectionChanged">
+					<ComboBox x:Name="themeMode" AutomationProperties.AutomationId="themeModeComboBox" SelectionChanged="ThemeMode_OnSelectionChanged">
 						<ComboBoxItem Content="浅色" Tag="Light" />
 						<ComboBoxItem Content="深色" Tag="Dark" />
 						<ComboBoxItem Content="跟随系统" Tag="Default" />
 					</ComboBox>
 				</toolkit:SettingsCard>
+				<TextBlock Text="体力" />
+
+				<toolkit:SettingsCard x:Name="fuben" Header="默认副本" Description="选择默认副本" HeaderIcon="{ui:FontIcon Glyph=&#xE773;}">
+					<ComboBox x:Name="fubenleixing">
+						<ComboBoxItem Content="拟造花萼(金)" />
+						<ComboBoxItem Content="拟造花萼(赤)" />
+						<ComboBoxItem Content="凝滞虚影" />
+						<ComboBoxItem Content="侵蚀隧洞" />
+						<ComboBoxItem Content="饰品提取" />
+					</ComboBox>
+				</toolkit:SettingsCard>
 				<toolkit:SettingsExpander x:Name="TiLi" Header="体力" Description="清理体力的相关配置" HeaderIcon="{ui:FontIcon Glyph=&#xE793;}" IsExpanded="True" IsEnabled="True">
-					 <ToggleSwitch x:Name="TiLikaiguan" IsOn="True" />
-					 <toolkit:SettingsExpander.Items>
-					 	<toolkit:SettingsCard x:Name="fuben" Header="默认副本" Description="选择默认副本" HeaderIcon="{ui:FontIcon Glyph=&#xE793;}">
-					 		<ComboBox x:Name="fubenleixing" Width="40">
-					 			<ComboBoxItem Content="拟造花萼(金)" />
-					 			<ComboBoxItem Content="拟造花萼(赤)" />
-					 			<ComboBoxItem Content="凝滞虚影" />
-					 			<ComboBoxItem Content="侵蚀隧洞" />
-					 			<ComboBoxItem Content="饰品提取" />
-					 		</ComboBox>
-					 	</toolkit:SettingsCard>
-					 </toolkit:SettingsExpander.Items>
+					<ToggleSwitch x:Name="TiLikaiguan" IsOn="True" />
+					<toolkit:SettingsExpander.Items>
+						<toolkit:SettingsCard x:Name="nizaohuaejin" Header="拟造花萼(金)" Description="选择拟造花萼(金)的副本" HeaderIcon="{ui:FontIcon Glyph=&#xE728;}">
+							<ComboBox x:Name="xuanzenizaohuaeji" IsEditable="True">
+								<ComboBoxItem Content="11" />
+								<ComboBoxItem Content="22" />
+							</ComboBox>
+						</toolkit:SettingsCard>
+						<toolkit:SettingsCard x:Name="nizaohuaechi" Header="拟造花萼(赤)" Description="选择拟造花萼(赤)的副本" HeaderIcon="{ui:FontIcon Glyph=&#xE728;}">
+							<ComboBox x:Name="xuanzenizaohuaechi" IsEditable="True">
+								<ComboBoxItem Content="11" />
+								<ComboBoxItem Content="22" />
+							</ComboBox>
+						</toolkit:SettingsCard>
+						<toolkit:SettingsCard x:Name="ningzhixuyying" Header="凝滞虚影" Description="请选择凝滞虚影的副本" HeaderIcon="{ui:FontIcon Glyph=&#xE728;}">
+							<ComboBox x:Name="xuanzeningzhixuyying" IsEditable="True">
+								<ComboBoxItem Content="11" />
+								<ComboBoxItem Content="22" />
+							</ComboBox>
+						</toolkit:SettingsCard>
+					</toolkit:SettingsExpander.Items>
 				</toolkit:SettingsExpander>
+				<toolkit:SettingsCard x:Name="fenjiesixingyiqi" Header="分解四星遗器" Description="请选择是否要清理四星遗器" HeaderIcon="{ui:FontIcon Glyph=&#xE8B7;}">
+					<ToggleSwitch OffContent="关闭11" OnContent="开启22" />
+				</toolkit:SettingsCard>
+				<toolkit:SettingsCard x:Name="duiwuqiehuan" Header="切换队伍" HeaderIcon="{ui:FontIcon Glyph=&#xE943;}">
+					<ToggleSwitch OffContent="关闭11" OnContent="开启11" />
+				</toolkit:SettingsCard>
+
 			</StackPanel>
 		</ScrollViewer>
 	</Grid>
