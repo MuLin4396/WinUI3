@@ -50,8 +50,9 @@ namespace App1
 		private string GetAppTitleFromSystem()
 		{
 			string appTitle = Package.Current.DisplayName.ToString();
-			string appVersion = Package.Current.Id.Version.ToString();
-			return appTitle + " · " + appVersion;
+			// string appVersion = Package.Current.Id.Version.ToString();
+			// return appTitle + " · " + appVersion;
+			return appTitle;
 		}
 
 		private void NavigationView_OnBackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args)
