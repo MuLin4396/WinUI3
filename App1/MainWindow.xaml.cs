@@ -1,23 +1,16 @@
 using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Controls.Primitives;
-using Microsoft.UI.Xaml.Data;
-using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.ViewManagement;
 using App1.View;
 using Microsoft.UI.Composition.SystemBackdrops;
+using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml.Media.Animation;
 using WinUIEx;
+using AppWindowTitleBar = Microsoft.UI.Windowing.AppWindowTitleBar;
 
 namespace App1
 {
@@ -43,6 +36,8 @@ namespace App1
 			SystemBackdrop = new MicaBackdrop { Kind = MicaKind.BaseAlt };
 
 			ExtendsContentIntoTitleBar = true;
+
+			TitleBarButton(current);
 			SetTitleBar(AppTitleBar);
 		}
 
@@ -55,11 +50,16 @@ namespace App1
 			return appTitle;
 		}
 
+		private void TitleBarButton(Window window)
+		{
+			AppWindowTitleBar titleBar = window.AppWindow.TitleBar;
+			titleBar.PreferredHeightOption = TitleBarHeightOption.Tall;
+		}
+
 		private void NavigationView_OnBackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args)
 		{
 			if (ContentFrame.CanGoBack) ContentFrame.GoBack();
 		}
-
 
 		private void NavigationView_OnItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
 		{

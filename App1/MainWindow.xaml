@@ -18,42 +18,11 @@
 				<ColumnDefinition Width="*" />
 				<ColumnDefinition Width="Auto" />
 			</Grid.ColumnDefinitions>
-			<TitleBar x:Name="AppTitleBar" Title="{x:Bind GetAppTitleFromSystem()}" Subtitle="Preview" IsBackButtonVisible="False" IsPaneToggleButtonVisible="False">
+			<TitleBar x:Name="AppTitleBar" Height="48" Title="{x:Bind GetAppTitleFromSystem()}" Subtitle="Preview" IsBackButtonVisible="False" IsPaneToggleButtonVisible="False">
 				<TitleBar.IconSource>
-					<BitmapIconSource ShowAsMonochrome="False" UriSource="ms-appx:///Assets/ZhiGengNiao.png" />
+					<BitmapIconSource  ShowAsMonochrome="False" UriSource="ms-appx:///Assets/ZhiGengNiao.png" />
 				</TitleBar.IconSource>
-				<TitleBar.Footer>
-					<Button Width="32" Height="32" Padding="0" CornerRadius="16">
-						<Button.Content>
-							<PersonPicture Width="32" Height="32" Initials="AB" ProfilePicture="ms-appx:///Assets/ZhiGengNiao.png" />
-						</Button.Content>
-						<Button.Flyout>
-							<MenuFlyout Placement="Bottom">
-								<MenuFlyoutItem Text="Manage account">
-									<MenuFlyoutItem.Icon>
-										<FontIcon Glyph="&#xE77B;" />
-									</MenuFlyoutItem.Icon>
-								</MenuFlyoutItem>
-								<MenuFlyoutSeparator />
-								<MenuFlyoutItem Text="Settings">
-									<MenuFlyoutItem.Icon>
-										<FontIcon Glyph="&#xE713;" />
-									</MenuFlyoutItem.Icon>
-								</MenuFlyoutItem>
-							</MenuFlyout>
-						</Button.Flyout>
-					</Button>
-				</TitleBar.Footer>
 			</TitleBar>
-			<StackPanel Grid.Column="1" Margin="36,0,24,0" Orientation="Horizontal" Spacing="36">
-				<Button FontSize="10" >
-					<Button.Content>
-						<FontIcon FontSize="10" Glyph="&#xE921;" />
-					</Button.Content>
-				</Button>
-				<FontIcon FontSize="10" Glyph="&#xE922;" />
-				<FontIcon FontSize="10" Glyph="&#xE8BB;" />
-			</StackPanel>
 		</Grid>
 
 		<NavigationView Grid.Row="1" x:Name="NavigationViewControl" OpenPaneLength="160" IsTitleBarAutoPaddingEnabled="False" IsTabStop="True" AlwaysShowHeader="True" IsBackButtonVisible="Collapsed" IsPaneToggleButtonVisible="True" PaneDisplayMode="Left" BackRequested="NavigationView_OnBackRequested" ItemInvoked="NavigationView_OnItemInvoked">
