@@ -47,7 +47,7 @@ namespace App1.View
 					MainWindow.current.AppWindow.TitleBar.ButtonForegroundColor = Colors.Black;
 					break;
 				case ElementTheme.Dark:
-					MainWindow.current.AppWindow.TitleBar.ButtonBackgroundColor = Colors.White;
+					MainWindow.current.AppWindow.TitleBar.ButtonForegroundColor = Colors.White;
 					break;
 			}
 		}
