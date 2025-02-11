@@ -13,14 +13,14 @@
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
-		<Grid Grid.Row="0" BorderThickness="1">
+		<Grid Grid.Row="0">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="*" />
 				<ColumnDefinition Width="Auto" />
 			</Grid.ColumnDefinitions>
 			<TitleBar x:Name="AppTitleBar" Height="48" Title="{x:Bind GetAppTitleFromSystem()}" Subtitle="Preview" IsBackButtonVisible="False" IsPaneToggleButtonVisible="False">
 				<TitleBar.IconSource>
-					<BitmapIconSource  ShowAsMonochrome="False" UriSource="ms-appx:///Assets/ZhiGengNiao.png" />
+					<BitmapIconSource ShowAsMonochrome="False" UriSource="ms-appx:///Assets/ZhiGengNiao.png" />
 				</TitleBar.IconSource>
 			</TitleBar>
 		</Grid>

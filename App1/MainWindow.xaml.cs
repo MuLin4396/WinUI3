@@ -37,7 +37,9 @@ namespace App1
 
 			ExtendsContentIntoTitleBar = true;
 
-			TitleBarButton(current);
+			AppWindowTitleBar titleBar = AppWindow.TitleBar;
+			titleBar.PreferredHeightOption = TitleBarHeightOption.Tall;
+			
 			SetTitleBar(AppTitleBar);
 		}
 
@@ -48,12 +50,6 @@ namespace App1
 			// string appVersion = Package.Current.Id.Version.ToString();
 			// return appTitle + " · " + appVersion;
 			return appTitle;
-		}
-
-		private void TitleBarButton(Window window)
-		{
-			AppWindowTitleBar titleBar = window.AppWindow.TitleBar;
-			titleBar.PreferredHeightOption = TitleBarHeightOption.Tall;
 		}
 
 		private void NavigationView_OnBackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args)
